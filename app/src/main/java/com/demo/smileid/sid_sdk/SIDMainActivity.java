@@ -58,8 +58,7 @@ public class SIDMainActivity extends BaseSIDActivity implements
     public void smileUIIDCardRegister(View view) {
         if (permissionGranted(PERMISSIONS)) {
             resetJob();
-            mConsentRequired = true;
-            requestUserConsent();
+            new SIDCaptureManager.Builder(this, CaptureType.SELFIE_AND_ID_CAPTURE, SMILE_ID_CARD_REQUEST_CODE).build().start();
         } else {
             ActivityCompat.requestPermissions(this, PERMISSIONS, SMILE_ID_UI_SELFIE_PERMISSION_REQUEST);
         }
@@ -81,14 +80,12 @@ public class SIDMainActivity extends BaseSIDActivity implements
 
     public void enrollWithIdNo(View view) {
         resetJob();
-        mConsentRequired = true;
         jobType = 1;
         startSelfieCapture(true, true, false, false, true);
     }
 
     public void enrollWithIdCard(View view) {
         resetJob();
-        mConsentRequired = true;
         jobType = 1;
         startSelfieCapture(true);
     }
@@ -119,26 +116,9 @@ public class SIDMainActivity extends BaseSIDActivity implements
     }
 
     public void validateId(View view) {
-        mConsentRequired = true;
         resetJob();
         jobType = 5;
-        requestUserConsent();
-    }
-
-    @Override
-    public void consentProvided(String tag) {
-        /*if (jobType == 6) {
-            mConsentRequired = false;
-            new DocVerifyOptionDialog(this, new DocVerifyOption()).showDialog();
-        } else */if (jobType == 5) {
-            mConsentRequired = false;
-            startActivity(new Intent(this, SIDIDValidationActivity.class));
-        } else if (jobType == (-1)) {
-            mConsentRequired = false;
-            new SIDCaptureManager.Builder(this, CaptureType.SELFIE_AND_ID_CAPTURE, SMILE_ID_CARD_REQUEST_CODE).build().start();
-        } else {
-            super.consentProvided(tag);
-        }
+        startActivity(new Intent(this, SIDIDValidationActivity.class));
     }
 
     private class DocVerifyOption implements DocVerifyOptionDialog.DlgListener {
@@ -197,11 +177,6 @@ public class SIDMainActivity extends BaseSIDActivity implements
         resetJob();
         jobType = 6;
         requestUserConsent();*/
-
-        mConsentRequired = true;
-        resetJob();
-        jobType = 6;
-        startSelfieCapture(true);
     }
 
     private void showOfflineAuthDialog() {

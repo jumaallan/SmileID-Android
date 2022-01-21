@@ -37,7 +37,7 @@ import static com.demo.smileid.sid_sdk.SIDStringExtras.EXTRA_TAG_PREFERENCES_AUT
 
 public class SIDAuthResultActivity extends AppCompatActivity implements SIDNetworkRequest.OnCompleteListener,
         SIDNetworkRequest.OnUpdateListener, SIDNetworkRequest.OnErrorListener,
-        SIDNetworkRequest.OnAuthenticatedListener, SIDNetworkRequest.OnDocVerificationListener {
+        SIDNetworkRequest.OnAuthenticatedListener {
 
     private SIDNetworkRequest mSINetworkRequest;
     private TextView mTvResult, mTvConfidenceValue;
@@ -84,7 +84,6 @@ public class SIDAuthResultActivity extends AppCompatActivity implements SIDNetwo
         mSINetworkRequest.setOnUpdateListener(this);
         mSINetworkRequest.setOnAuthenticatedListener(this);
         mSINetworkRequest.set0nErrorListener(this);
-        mSINetworkRequest.setOnDocVerificationListener(this);
         mSINetworkRequest.initialize();
     }
 
@@ -115,7 +114,7 @@ public class SIDAuthResultActivity extends AppCompatActivity implements SIDNetwo
 
     @NonNull
     private SIDConfig createConfig(SIDMetadata metadata) {
-        SIDNetData data = new SIDNetData(this, SIDNetData.Environment.PROD);
+        SIDNetData data = new SIDNetData(this, SIDNetData.Environment.TEST);
         GeoInfos geoInfos = SIDGeoInfos.getInstance().getGeoInformation();
         //Uncomment to set user Provided partner Parameter
         //setPartnerParams();
@@ -259,12 +258,6 @@ public class SIDAuthResultActivity extends AppCompatActivity implements SIDNetwo
                 upload(createConfig());
             }
         }
-    }
-
-    @Override
-    public void onDocVerified(SIDResponse result) {
-        Toast.makeText(this, result.getResultText(), Toast.LENGTH_LONG).show();
-        findViewById(R.id.pbLoading).setVisibility(View.GONE);
     }
 
     private void saveAuthTagsForLater() {

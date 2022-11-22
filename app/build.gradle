@@ -103,20 +103,20 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.6.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.hbb20:ccp:2.6.1'
     implementation "androidx.multidex:multidex:2.0.1"
     implementation 'com.google.guava:guava:24.1-jre'
 
 //    PRODUCTION DEPENDENCIES
-    implementation 'com.smileidentity:smile-id-sdk:7.3.16'
-    implementation 'com.smileidentity:netjava:0.0.9'
-    implementation 'com.smileidentity:smile-id-ui:0.2.10'
+    implementation 'com.smileidentity:netjava:0.0.9-SNAPSHOT'
+    implementation 'com.smileidentity:smile-id-sdk:7.3.16-SNAPSHOT'
+    implementation 'com.smileidentity:smile-id-ui:0.2.10-SNAPSHOT'
 
     // DEV DEPENDENCIES
 //    implementation project(':android_lib')

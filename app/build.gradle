@@ -110,16 +110,16 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.hbb20:ccp:2.6.1'
-    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.google.guava:guava:24.1-jre'
-
+    
     // PRODUCTION DEPENDENCIES
      implementation 'com.smileidentity:smile-id-sdk:7.4.0-SNAPSHOT'
      implementation 'com.smileidentity:netjava:0.0.9'
      implementation 'com.smileidentity:smile-id-ui:0.3.0-SNAPSHOT'
 
     // DEV DEPENDENCIES
-    //implementation project(':android_lib')
-    //implementation project(':smile-id-ui')
-    //implementation project(':netjava')
+//    implementation project(':android_lib')
+//    implementation project(':smile-id-ui')
+//    implementation project(':netjava')
 }

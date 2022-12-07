@@ -85,7 +85,7 @@ public class GetStartedActivity extends BaseSIDActivity {
         docVParams.put(DOC_V_CAPTURE_TYPE, DOC_VER_TYPE.SELFIE_PLUS_ID_CARD.toString());
         docVParams.put(DOC_V_USER_SELFIE_OPTION, DocVOptionDialog.DOC_VER_OPTION.NON_ENROLLED_USER.toString());
         mParams.putSerializable(DOC_V_PARAM, docVParams);
-        proceedWithIDCard();
+        proceedWithSelfie();
     }
 
     private void showSmartSelfieDialog() {
@@ -116,8 +116,8 @@ public class GetStartedActivity extends BaseSIDActivity {
     }
 
     private void proceedWithSelfie() {
-//        useLocalScreen();
-        useSmileUIScreen();
+        useLocalScreen();
+//        useSmileUIScreen();
     }
 
     private void useLocalScreen() {
@@ -138,8 +138,7 @@ public class GetStartedActivity extends BaseSIDActivity {
 
     public void useSmileUIScreen() {
         SIDCaptureManager.Builder sidCaptureManager = new SIDCaptureManager.Builder(this,
-            CaptureType.SELFIE, SMILE_SELFIE_REQUEST_CODE);
-
+            CaptureType.SELFIE_AND_ID_CAPTURE, SMILE_SELFIE_REQUEST_CODE);
         sidCaptureManager.build().start();
     }
 

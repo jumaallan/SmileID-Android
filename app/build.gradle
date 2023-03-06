@@ -13,7 +13,7 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
-//    signingConfigs {
+//        signingConfigs {
 //        def propFile = rootProject.file("./secrets.properties")
 //        def properties = new Properties()
 //        properties.load(new FileInputStream(propFile))
@@ -114,9 +114,9 @@ dependencies {
     implementation 'com.google.guava:guava:24.1-jre'
     
     // PRODUCTION DEPENDENCIES
-     implementation 'com.smileidentity:smile-id-sdk:7.4.0-SNAPSHOT'
-     implementation 'com.smileidentity:netjava:0.0.9'
-     implementation 'com.smileidentity:smile-id-ui:0.3.0-SNAPSHOT'
+     implementation 'com.smileidentity:smile-id-sdk:7.4.2-SNAPSHOT'
+     implementation 'com.smileidentity:netjava:1.1.0-SNAPSHOT'
+     implementation 'com.smileidentity:smile-id-ui:1.0.2-SNAPSHOT'
 
     // DEV DEPENDENCIES
 //    implementation project(':android_lib')

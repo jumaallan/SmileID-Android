@@ -114,9 +114,9 @@ dependencies {
     implementation 'com.google.guava:guava:24.1-jre'
     
     // PRODUCTION DEPENDENCIES
-     implementation 'com.smileidentity:smile-id-sdk:7.3.21'
-     implementation 'com.smileidentity:netjava:1.0.2'
-     implementation 'com.smileidentity:smile-id-ui:1.0.5'
+     implementation 'com.smileidentity:smile-id-sdk:7.3.23'
+     implementation 'com.smileidentity:netjava:1.0.3'
+     implementation 'com.smileidentity:smile-id-ui:1.0.6'
 
 
     // DEV DEPENDENCIES
